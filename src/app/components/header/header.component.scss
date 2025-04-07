@@ -1,0 +1,139 @@
+header {
+  position: fixed;
+  //display: flex;
+  align-items: center;
+    height: 60px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    z-index: 1000;
+    pointer-events: auto;
+    background: #333;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+  }
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #333;
+  color: white;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.d3{
+  font-size: 8px;
+  font-weight: bold;
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+.nav-links a:hover,
+.nav-links a.active-link {
+  color: orange;
+}
+
+.nav-links a.active-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: orange;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+  }
+}
+/*.nav-gradient {
+  height: 5px;
+  background: linear-gradient(to right, #4c75be, #825f93, #d34a2b);
+}*/
+
+@media (max-width: 768px) {
+  header {
+    .navbar {
+      padding: 15px 20px;
+
+      
+     
+
+      .menu-toggle {
+        display: flex;
+      } 
+      .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #222;
+        padding: 20px 0;
+        text-align: center;
+        gap: 15px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+
+        &.active {
+          display: flex;
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        &.mobile {
+        display: none;
+      }
+      }
+    }
+  }
+}

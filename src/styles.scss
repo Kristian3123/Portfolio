@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+/**/html, body, app-root {
+--primary-color: white;
+--background-main: linear-gradient(45deg, #007bff, #ff5722); 
+--background-secondary: linear-gradient(45deg, #007bff, #ff5722);;
+--secondary-color:#333;
+--primary-shadow:#222;
+
+    
+    height: 100%;
+    padding: 0;
+    margin: 0;
+     font-family: Roboto, "Helvetica Neue", sans-serif;
+     background-color: var(--background-main);
+     
+
+}
+
+main {
+    padding-top: 60px;
+  }

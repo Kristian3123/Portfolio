@@ -1,0 +1,224 @@
+.background-contact {
+  display: flex;
+  //flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+  /*height: 100%;
+  width: 100%;*/
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #007bff, #ff5722);
+  color: white;
+  text-align: center;
+}
+
+.contact {
+  max-width: 500px;
+  margin-top: 80px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #222;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  text-align: center;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    margin: 20px 0;
+    //margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  label {
+    position: absolute;
+    pointer-events: none;
+    transition: 0.5s ease;
+    top: 50%; /* Централна начална позиция */
+    left: 12px;
+    transform: translateY(-50%); /* Подравняване по центъра */
+    color: #666;
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    background: #333;
+
+    color: rgb(255, 255, 255);
+    transition: 0.3s ease;
+    //position: relative;
+
+    &:focus {
+      border-color: orange;
+    }
+  }
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label,
+  textarea:focus ~ label,
+  textarea:not(:placeholder-shown) ~ label {
+    top: 0px; /* Преместване нагоре */
+    font-size: 12px;
+    color: white;
+  }
+
+  input::placeholder {
+    color: transparent; /* Скриване на текста "placeholder" */
+  }
+
+  /* .input-group input:focus~label, 
+ .input-group input:valid~label{
+ top: 0px;
+ font-size: 12px;
+
+ }*/
+
+  .placeholder {
+    position: absolute;
+    top: 18px;
+    left: 8px;
+    font-size: 12px;
+    padding: 0px 5px;
+    color: #666;
+    transition: 0.3s;
+    pointer-events: none;
+  }
+
+  .text-input:focus + .placeholder {
+    top: 0px;
+    color: white;
+    background: linear-gradient(to bottom, #222, #333);
+    border-radius: 300px;
+  }
+
+  .text-input::placeholder {
+    color: transparent;
+    visibility: hidden;
+  }
+
+  /* .input-label {
+      transition: transform 0.2s;
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      transform-origin: top left;
+      transform: scale(0.6) translateY(-20px);
+    }*/
+
+  .text-input:placeholder-shown:not(.text-input:focus) ~ .input-label {
+    transform: unset;
+  }
+
+  small {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background: orange;
+    border: none;
+    color: black;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: darkorange;
+    }
+
+    &:disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
+  }
+
+  .success {
+    text-align: center;
+    color: limegreen;
+    margin-top: 10px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    .social {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      .icons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        img {
+          width: 67px;
+        }
+        img:hover {
+          filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
+            brightness(104%) contrast(97%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    .input-group {
+      input,
+      textarea {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      label {
+        font-size: 12px;
+      }
+    }
+
+    button {
+      font-size: 16px;
+      padding: 8px;
+    }
+
+    .social {
+      margin-top: 20px;
+
+      .icons {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+}
