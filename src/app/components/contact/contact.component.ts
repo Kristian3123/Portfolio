@@ -34,12 +34,12 @@ export class ContactComponent  {
     this.errorMessage = '';
 
     const formData = {
-      from_name: this.contactForm.value.name,
-      reply_to: this.contactForm.value.email,
+      name: this.contactForm.value.name,
+      email: this.contactForm.value.email,
       message: this.contactForm.value.message,
     };
     
-    emailjs.send('your_service_id', 'your_template_id', formData, 'your_public_key')
+    emailjs.send('default_service', 'template_portfolio', formData, 'nTjpfQxMI0EZkVIS1')
       .then(() => {
         this.isSubmitting = false;
         this.successMessage = 'Message sent successfully!';

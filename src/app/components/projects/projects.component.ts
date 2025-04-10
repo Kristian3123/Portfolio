@@ -12,7 +12,8 @@ interface Project {
   tags:string[];
   link: string;
   demo: string;
-  image: string;
+  images: string[];
+  //github?: string;
 }
 
 @Component({
@@ -34,7 +35,7 @@ export class ProjectsComponent {
       tags:['Angular', 'TypeScript'],
       link: 'https://github.com/Kristian3123/Graduation',
       demo: 'https://Kristian3123.github.io/Graduation',
-      image: '../assets/projects/portfolio.png',
+      images: ['../assets/projects/portfolio.png'],
     },
     {
       title: 'E-Commerce App',
@@ -44,17 +45,17 @@ export class ProjectsComponent {
       tags:['Angular'],
       link: 'https://github.com/yourname/ecommerce-app',
       demo: 'https://Kristian3123.github.io/TransportComp',
-      image: '../assets/projects/ecommerce.png',
+      images: ['../assets/projects/ecommerce.png'],
     },
     {
       title: 'TransportComp',
-      description: '',
+      description: 'A',
       //languages: ['Java'],
       //frameworks: [''],
       tags:['Java'],
       link: 'https://github.com/Kristian3123/TransportComp',
       demo: 'https://Kristian3123.github.io/TransportComp',
-      image: '../assets/projects/task-manager.png',
+      images: ['../assets/projects/task-manager.png'],
     },
     
   ];

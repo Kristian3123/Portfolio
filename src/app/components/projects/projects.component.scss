@@ -1,125 +1,126 @@
-.background-projects{
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     display: flex;
-  //height: 100vh;
-  min-height: 100vh;
-  padding: 40px 20px;
-
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  background: linear-gradient(45deg, #007bff, #ff5722);
-  color: white;
-  
-}
-
-.projects {
-    text-align: center;
-    max-width: 1100px;
-    //margin: 50px auto;
-    margin: auto;
-    width: 100%;
-padding: 20px;
- border-radius: 10px;  
-
-    color: white;
-    background-color: #222;//bbb
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-  .My-Projects  {
-    //display: flex;
-    align-items: center;
-    text-align: center;
+    flex-direction: column;
     justify-content: space-between;
-    
-    h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
+
+    .view-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .footer {
+      margin-top: 1rem;
+      padding-top: 0.5rem;
+      border-top: 2px solid #eee;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: white;
+
+      &.java       { background-color: #f89820; }
+      &.javascript { background-color: #f0db4f; color: #000; }
+      &.typescript { background-color: #007acc; }
+      &.python     { background-color: #3472a6; }
+      &.c         { background-color: #178600; }
+      &.asp.net    { background-color: #8a2be2; }
+      &.angular    { background-color: #dd0031; }
+      &.node.js    { background-color: #3c873a; }
+      &.react      { background-color: #61dbfb; color: #000; }
     }
   }
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));//300
-      gap: 20px;
-      padding: 0 10px;
-    }
-  
-    .project-card {
-      background: #7d4446;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s;
-  
-      &:hover {
-        transform: translateY(-5px);
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  .modal {
+    background: white;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        font-size: 1.5rem;
+        border: none;
+        background: none;
+        cursor: pointer;
       }
-  
+    }
+
+    .carousel {
+      position: relative;
+      text-align: center;
+
       img {
         width: 100%;
-        height: 180px;
-        object-fit: cover;
+        height: auto;
+        border-radius: 10px;
       }
-  
-      .project-info {
-        padding: 15px;
-  
-        h3 {
-          margin-bottom: 10px;
-        }
-  
-        p {
-          font-size: 14px;
-          color: #bbb;
-        }
-  
-        a {
+
+      .nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        &.prev { left: 0.5rem; }
+        &.next { right: 0.5rem; }
+      }
+
+      .dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+
+        span {
+          width: 10px;
+          height: 10px;
+          background: #ccc;
+          border-radius: 50%;
           display: inline-block;
-          margin-top: 10px;
-          margin-right: 15px;
-          padding: 8px 12px;
-          background: orange;
-          color: black;
-          border-radius: 5px;
-          text-decoration: none;
-          transition: background 0.3s;
-  
-          &:hover {
-            background: darkorange;
+          cursor: pointer;
+          &.active {
+            background: #007bff;
           }
         }
       }
     }
   }
-  
-  @media (max-width: 768px) {
-    .projects h2 {
-      font-size: 1.8rem;
-    }
-  
-    .project-card img {
-      height: 150px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .projects {
-      padding: 15px;
-    }
-  
-    .project-card img {
-      height: 130px;
-    }
-
-    .tag{
-        padding: 0 20px;
-        height: 30px;
-        width: fit-content;
-    font-size: 40px;
-    line-height: 30px;
-    border-radius: 20px;
-    background-color: blue;
-    color: white;
-      }
-  }
-  
-  
+}
