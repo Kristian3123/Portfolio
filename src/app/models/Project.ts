@@ -1,14 +1,16 @@
+import { Tag } from "./Tag";
+
 export interface Project {
     id:number;
     title: string;
-    summаry:string;
+    summary: string;
     description: string;
-    
+    tags:Tag[];
     
     link: string;
     demo: string;
     images: string[];
-    tags:string[];
+    
     //github?: string;
     //languages: string[];
     //frameworks: string[];

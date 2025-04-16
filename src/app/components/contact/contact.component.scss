@@ -1,13 +1,13 @@
 .background-contact {
   display: flex;
   //flex-direction: column;
-  min-height: 100vh;
-  height: 100vh;
+  //min-height: 100vh;
+  //height: 100vh;
   /*height: 100%;
   width: 100%;*/
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #007bff, #ff5722);
+  //background: linear-gradient(45deg, #007bff, #ff5622);
   color: white;
   text-align: center;
 }
@@ -39,9 +39,9 @@
     position: absolute;
     pointer-events: none;
     transition: 0.5s ease;
-    top: 50%; /* Централна начална позиция */
+    top: 50%; 
     left: 12px;
-    transform: translateY(-50%); /* Подравняване по центъра */
+    transform: translateY(-50%); 
     color: #666;
     font-size: 14px;
   }

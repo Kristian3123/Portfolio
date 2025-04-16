@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from "./project-card/project-card.component";
+import { Project } from '../../models/Project';
+import { Tag } from '../../models/Tag';
 
 
-interface Project {
+/*interface Project {
   title: string;
+  summаry:string;
   description: string;
   //languages: string[];
   //frameworks: string[];
@@ -14,7 +17,7 @@ interface Project {
   demo: string;
   images: string[];
   //github?: string;
-}
+}*/
 
 @Component({
   selector: 'app-projects',
@@ -23,12 +26,93 @@ interface Project {
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
+
 export class ProjectsComponent {
-  filterText: string = '';
+  projects: Project[] =[
+    {
+      id:0,
+    title: 'Portfolio Website',
+    summary: 'A',
+    description: 'A ',
+    link: 'https://github.com/Kristian3123/Graduation',
+    tags:[Tag.Angular, Tag.TypeScript],
+    
+    demo: 'https://Kristian3123.github.io/Graduation',
+      images: ['../assets/projects/portfolio.png'],
+},
+{
+  id:1,
+title: 'Transport Compаny',
+summary: 'A Java Project that track wats hapening in a TransportCompаny',
+description: 'A ',
+link: 'https://github.com/Kristian3123/Graduation',
+tags:[Tag.Java],
+
+demo: 'https://Kristian3123.github.io/Graduation',
+  images: ['../assets/projects/portfolio.png'],
+},
+{
+  id:2,
+title: 'Graduation',
+summary: 'A',
+description: 'A ',
+link: 'https://github.com/Kristian3123/Graduation',
+tags:[Tag.Java, Tag.HTMl],
+
+demo: 'https://Kristian3123.github.io/Graduation',
+  images: ['../assets/projects/portfolio.png'],
+},
+{
+  id:3,
+title: 'A',
+summary: 'A',
+description: 'A ',
+link: 'https://github.com/Kristian3123/Graduation',
+tags:[Tag.Java, Tag.HTMl],
+
+demo: 'https://Kristian3123.github.io/Graduation',
+  images: ['../assets/projects/portfolio.png'],
+},
+{
+  id:4,
+title: 'A',
+summary: 'A',
+description: 'A ',
+link: 'https://github.com/Kristian3123/Graduation',
+tags:[Tag.Java, Tag.HTMl],
+
+demo: 'https://Kristian3123.github.io/Graduation',
+  images: ['../assets/projects/portfolio.png'],
+},
+{
+  id:5,
+title: 'A',
+summary: 'A',
+description: 'A ',
+link: 'https://github.com/Kristian3123/Graduation',
+tags:[Tag.Java, Tag.HTMl],
+
+demo: 'https://Kristian3123.github.io/Graduation',
+  images: ['../assets/projects/portfolio.png'],
+},
+{
+  id:6,
+title: 'Graduation',
+summary: 'A',
+description: 'A ',
+link: 'https://github.com/Kristian3123/Graduation',
+tags:[Tag.Java, Tag.HTMl],
+
+demo: 'https://Kristian3123.github.io/Graduation',
+  images: ['../assets/projects/portfolio.png'],
+},
+  ];
+ /* filterText: string = '';
 
   projects: Project[] = [
     {
       title: 'Portfolio Website',
+      summаry: 'A',
       description: 'A ',
      // languages: ['TypeScript'],
       //frameworks: ['Angular'],
@@ -39,6 +123,7 @@ export class ProjectsComponent {
     },
     {
       title: 'E-Commerce App',
+      summаry: 'A',
       description: 'A ',
       //languages: ['TypeScript'],
       //frameworks: ['Angular'],
@@ -49,6 +134,7 @@ export class ProjectsComponent {
     },
     {
       title: 'TransportComp',
+      summаry: 'A',
       description: 'A',
       //languages: ['Java'],
       //frameworks: [''],
@@ -58,7 +144,9 @@ export class ProjectsComponent {
       images: ['../assets/projects/task-manager.png'],
     },
     
-  ];
+  ];*/
+
+
 /*  selectedLanguages: string[] = [];
   selectedFrameworks: string[] = [];
 
@@ -86,4 +174,6 @@ export class ProjectsComponent {
     this.selectedLanguages = [];
     this.selectedFrameworks = [];
   }*/ 
+
+
 }

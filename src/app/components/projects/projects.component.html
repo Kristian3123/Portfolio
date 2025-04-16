@@ -1,10 +1,10 @@
-<!--<section class="background-projects">
+<section class="background-projects">
 <section class="projects">
     
 
    <div class="My-Projects"> 
    <h2>My Projects</h2>
-</div>-->
+</div>
 
 
 <!--<div class="container">
@@ -48,7 +48,14 @@
   </section>
   </section>--> 
 
-  <div class="container">
+  
+  <div class="projects-container">
     
-<app-project-card></app-project-card>
+      <div *ngFor="let project of projects" class="project-card" style="max-width: 300px; min-width: 300px;"><!--380px-->
+<app-project-card [project]="project"></app-project-card>
+      </div>
+    
+    
   </div>
+</section>
+</section>
