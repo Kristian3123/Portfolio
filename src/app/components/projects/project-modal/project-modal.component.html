@@ -1,5 +1,27 @@
-<div>
-<div> </div>
-<div id="content"> </div>
-<div> </div>
-</div>
+<div class="modal-overlay" *ngIf="show" (click)="closeModal()">
+    <div class="modal-content" (click)="stopPropagation($event)">
+      <button class="close-button" (click)="closeModal()">&times;</button>
+      
+      <h2>{{ project.title }}</h2>
+      
+      <div class="modal-body">
+        <div class="project-images">
+          <img *ngFor="let image of project.images" [src]="image" alt="{{ project.title }}">
+        </div>
+        
+        <div class="project-details">
+          <p><strong>Summary:</strong> {{ project.summary }}</p>
+          <p><strong>Description:</strong> {{ project.description }}</p>
+          
+          <div class="tags">
+            <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
+          </div>
+          
+          <div class="project-links">
+            <a [href]="project.link" target="_blank" class="link-button">View Code</a>
+            <a [href]="project.demo" target="_blank" class="link-button">Live Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
