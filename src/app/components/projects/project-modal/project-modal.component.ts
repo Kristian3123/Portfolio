@@ -7,26 +7,20 @@ import { Project } from '../../../models/Project';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './project-modal.component.html',
-  styleUrl: './project-modal.component.scss'
+  styleUrl: './project-modal.component.scss',
+
 })
+
 export class ProjectModalComponent {
   //@Input() project={} as Project;
   @Input() project: any;
-  @Input() show: boolean = false;
-  @Output() closed = new EventEmitter<void>();
+  @Input() isOpen: boolean = false;
+  @Output() close = new EventEmitter<void>();
 
-  ngOnChanges() {
-    if (this.show) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+  closeModal(){
+this.close.emit();
   }
-
-closeModal() {
-    this.closed.emit();
-  }
-
+  /*@Input() show: boolean = false;
    @HostListener('document:keydown.escape')
   onEscKey() {
     if (this.show) {
@@ -34,15 +28,16 @@ closeModal() {
     }
   }
 
-  @HostListener('document:mouseleave')
-  onMouseLeave() {
+    ngOnChanges() {
     if (this.show) {
-      this.closeModal();
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
   }
 
   stopPropagation(event: Event) {
     event.stopPropagation();
-  }
+  }*/
 
 }

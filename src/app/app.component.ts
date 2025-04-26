@@ -7,12 +7,15 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ProjectModalComponent } from './components/projects/project-modal/project-modal.component';
+import { ModalComponent } from './modal/modal.component';
+
 
 @Component({
   selector: 'app-root',
   //template: '<router-outlet></router-outlet>',
   imports: [CommonModule, RouterOutlet, 
-HeaderComponent,  HomeComponent, ProjectsComponent, ContactComponent
+HeaderComponent, ModalComponent, ProjectModalComponent, HomeComponent, ProjectsComponent, ContactComponent
   ],
   templateUrl: './app.component.html',
 
@@ -20,7 +23,8 @@ HeaderComponent,  HomeComponent, ProjectsComponent, ContactComponent
 })
 
 export class AppComponent {
- // title = 'portfolio-website';
+  title = 'portfolio-website';
+
   constructor(
     private titleService: Title,
     private router: Router,

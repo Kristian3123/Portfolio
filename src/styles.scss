@@ -19,3 +19,32 @@
 main {
     padding-top: 60px;
   }
+
+  .modal-open {
+    overflow: hidden;
+    
+    app-project-modal {
+      display: flex !important;
+      opacity: 1 !important;
+    }
+  }
+  
+  app-project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  
+    &.active {
+      display: flex;
+      opacity: 1;
+    }
+  }

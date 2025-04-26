@@ -1,9 +1,9 @@
-
+<div class="card">
             <div class="card-body" >
                 <h5 class="card-tittle">{{project.title}}</h5>
                 <p class="card-text">{{project.summary}}.</p>
 
-                <button class="btn" (click)="OpenModal($event)">Vew More</button>
+                <button class="btn" (click)="openModal()">Vew More</button>
             </div>
       
           
@@ -16,8 +16,11 @@
             </div>
         
             <app-project-modal 
-  [project]="project" 
-  [show]="showModal" 
-  (closed)="closeModal()">
-</app-project-modal>
+           
+            [isOpen]="showModal"
+            [project]="project"
+            (closeModal)="closeModal()">
+          </app-project-modal>
+
+        </div>
       

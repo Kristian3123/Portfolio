@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, HostListener, Output, EventEmitter, Renderer2, ElementRef  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Project } from '../../../models/Project';
 import { ProjectModalComponent } from '../project-modal/project-modal.component';
@@ -12,22 +12,20 @@ import { ProjectModalComponent } from '../project-modal/project-modal.component'
   styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
-@Input() project={} as Project;
+  @Input() project: any;
+//@Input() project={} as Project;
 showModal: boolean = false ;//as const
+
 //@Input() project!: Project;
 //@Output() viewMore = new EventEmitter<void>();
 //@Output() viewMore = new EventEmitter<Project>();
 
-OpenModal(event: MouseEvent) {
-  event.preventDefault();
-  event.stopPropagation(); // Prevent event bubbling
-  this.showModal = true;
-
-  setTimeout(() => {
-    this.showModal = true;
-  }, 10);
+openModal(){
+  this.showModal= true;
 }
-  closeModal() {
-    this.showModal = false;
-  }
+
+closeModal(){
+  this.showModal= false;
+}
+
 }

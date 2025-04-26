@@ -1,10 +1,45 @@
-<div class="modal-overlay" *ngIf="show" (click)="closeModal()">
+<div class="modal-overlay" *ngIf="isOpen" (click)="closeModal()" >
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <button class="close-btn" (click)="closeModal()">&times;</button>
+    
+    <div class="modal-header">
+      <h2>{{ project.title }}</h2>
+    </div>
+    
+    <div class="modal-body">
+
+<div class="image-gallery" *ngIf="project.images?.length">
+        <img *ngFor="let image of project.images" [src]="image" alt="Project screenshot">
+      </div>
+      <div class="project-details">
+      <p>{{ project.description }}</p>
+      
+
+      <div class="tags">
+        <span *ngFor="let tag of project.tags" class="tag" [style.background-color]="tag.color">{{ tag }}</span>
+      </div>
+</div>
+    </div>
+
+    
+    <div class="modal-footer">
+      <div class="project-links">
+      <a [href]="project.link" target="_blank" class="btn">GitHub</a>
+      <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="btn">Demo</a>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+<!--<div class="modal-overlay" *ngIf="show" (click)="closeModal()">
     <div class="modal-content" (click)="stopPropagation($event)">
       <button class="close-button" (click)="closeModal()">&times;</button>
       
       <h2>{{ project.title }}</h2>
       
       <div class="modal-body">
+
         <div class="project-images">
           <img *ngFor="let image of project.images" [src]="image" alt="{{ project.title }}">
         </div>
@@ -24,4 +59,4 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->

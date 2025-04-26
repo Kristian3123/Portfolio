@@ -11,7 +11,8 @@ export const PROJECTS: Project[] =[
       tags:[Tag.Angular, Tag.TypeScript],
       
       demo: 'https://Kristian3123.github.io/Graduation',
-        images: ['../assets/projects/portfolio.png'],
+        images: ['../assets/5296501_linkedin_network_linkedin logo_icon.svg'],
+        
   },
   {
     id:1,
@@ -30,57 +31,35 @@ export const PROJECTS: Project[] =[
   summary: 'A',
   description: 'A ',
   link: 'https://github.com/Kristian3123/Graduation',
-  tags:[Tag.Java, Tag.HTMl],
+  tags:[Tag.Java, Tag.HTML],
   
   demo: 'https://Kristian3123.github.io/Graduation',
     images: ['../assets/projects/portfolio.png'],
   },
   {
     id:3,
-  title: 'A',
-  summary: 'A',
+  title: 'Restaurant',
+  summary: 'A web page for a restaurant',
   description: 'A ',
   link: 'https://github.com/Kristian3123/Graduation',
-  tags:[Tag.Java, Tag.HTMl],
+  tags:[Tag.JavaScript],
   
   demo: 'https://Kristian3123.github.io/Graduation',
     images: ['../assets/projects/portfolio.png'],
   },
   {
-    id:4,
-  title: 'A',
-  summary: 'A',
+    id:3,
+  title: '',
+  summary: 'A online magazine',
   description: 'A ',
   link: 'https://github.com/Kristian3123/Graduation',
-  tags:[Tag.Java, Tag.HTMl],
+  tags:[Tag.Php, Tag.AspNet],
   
   demo: 'https://Kristian3123.github.io/Graduation',
     images: ['../assets/projects/portfolio.png'],
   },
-  {
-    id:5,
-  title: 'A',
-  summary: 'A',
-  description: 'A ',
-  link: 'https://github.com/Kristian3123/Graduation',
-  tags:[Tag.Java, Tag.HTMl],
-  
-  demo: 'https://Kristian3123.github.io/Graduation',
-    images: ['../assets/projects/portfolio.png'],
-  },
-  {
-    id:6,
-  title: 'Graduation',
-  summary: 'A',
-  description: 'A ',
-  link: 'https://github.com/Kristian3123/Graduation',
-  tags:[Tag.Java, Tag.HTMl],
-  
-  demo: 'https://Kristian3123.github.io/Graduation',
-    images: ['../assets/projects/portfolio.png'],
-  },
+ 
   
     ];
   
-    
-  
+   
