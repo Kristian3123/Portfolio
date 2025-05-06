@@ -3,7 +3,7 @@
                 <h5 class="card-tittle">{{project.title}}</h5>
                 <p class="card-text">{{project.summary}}.</p>
 
-                <button class="btn" (click)="openModal()">Vew More</button>
+                <button class="btn" (click)="openModal($event)">Vew More</button>
             </div>
       
           
@@ -15,12 +15,26 @@
                 </div>
             </div>
         
-            <app-project-modal 
-           
-            [isOpen]="showModal"
-            [project]="project"
-            (closeModal)="closeModal()">
-          </app-project-modal>
+            <app-modal 
+            *ngIf="isModalOpen"
+            
+            [isOpen]="isModalOpen"
+            [project]="project" 
+            (close)="closeModal()">
+
+        <!--<div class="project-images" *ngIf="project.images?.length">
+                <img *ngFor="let image of project.images" [src]="image" alt="Project screenshot">
+              </div>
+              <div class="project-details">
+                <h2>{{project.title}}</h2>
+                <p>{{project.description}}</p>
+                <div class="tags">
+                  <span *ngFor="let tag of project.tags" class="tag" [style.background-color]="tag.color">
+                    {{tag}}
+                  </span>
+                </div>
+              </div>-->
+          </app-modal>
 
         </div>
       

@@ -14,7 +14,10 @@
 
 }*/
 
-
+.card{
+  position: relative;
+  
+}
 
 .card-body {
   flex: 1; // Заема останалото пространство
@@ -43,7 +46,9 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
-
+  
+  position: relative;
+  
   &:hover{
    background-color: rgba(255, 140, 0, 0.842); //#0056b3
   }

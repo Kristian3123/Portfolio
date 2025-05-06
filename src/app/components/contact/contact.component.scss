@@ -155,6 +155,7 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
+
     .social {
       display: flex;
       flex-direction: column;
@@ -162,14 +163,18 @@
       text-align: center;
       margin-top: 10px;
       margin-bottom: 10px;
+
       .icons {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
+
         img {
           width: 50px;
+          
         }
+
         img:hover {
           filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
             brightness(104%) contrast(97%);
@@ -178,6 +183,7 @@
     }
   }
 }
+
 
 @media (max-width: 768px) {
   .contact {

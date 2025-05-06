@@ -1,14 +1,14 @@
-<div class="modal-overlay" *ngIf="isOpen" (click)="closeModal()" >
+<div class="modal-overlay" *ngIf="isOpen" (click)="close()">
   <div class="modal-content" (click)="$event.stopPropagation()">
-    <button class="close-btn" (click)="closeModal()">&times;</button>
+    <button class="close-btn" (click)="close()">&times;</button>
     
     <div class="modal-header">
       <h2>{{ project.title }}</h2>
     </div>
     
     <div class="modal-body">
-
-<div class="image-gallery" *ngIf="project.images?.length">
+      
+<div class="project-images" *ngIf="project.images?.length">
         <img *ngFor="let image of project.images" [src]="image" alt="Project screenshot">
       </div>
       <div class="project-details">
@@ -16,7 +16,8 @@
       
 
       <div class="tags">
-        <span *ngFor="let tag of project.tags" class="tag" [style.background-color]="tag.color">{{ tag }}</span>
+        <span *ngFor="let tag of project.tags" class="tag"
+         [style.background-color]="tag.color">{{ tag }}</span>
       </div>
 </div>
     </div>
@@ -31,6 +32,7 @@
 
   </div>
 </div>
+
 
 <!--<div class="modal-overlay" *ngIf="show" (click)="closeModal()">
     <div class="modal-content" (click)="stopPropagation($event)">

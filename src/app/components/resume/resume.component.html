@@ -1,12 +1,37 @@
 <section class="background-resume">
-    <section class="resume"> 
-    <div class="avatar">
-<img src="/src/assets/avatar.svg" alt="Avatar">
-    </div>
-   
-    <div class="content">
-        <button (click)="DownloadFile()" class="btn">Download PDF CV/Resume</button>
+    <section class="resume">
+        <div class="resume-left">
+            <img src="../../../assets/Avatar.PNG" alt="Avatar" class="avatar">
+            <div class="contact">
+                <h3>Contact me:</h3>
+                <div class="info">
+                    <p>{{resumeData.contacts.email}}</p>
 
-    </div>
-    </section>   
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-right">
+            <div class="controls">
+
+                <button (click)="DownloadFile()" class="btn">Download PDF CV/Resume</button>
+                <!--<div class="content"></div>-->
+                <div class="toggle-group">
+                <div class="toggle-container">
+                    <div class="toggle-switch">
+                        <label>
+                            <input type="checkbox" [checked]="multiOpenEnabled" (change)="toggleMultiOpen()">
+                            <span class="slider"></span>
+                            <span class="label-text">Multiple panels</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+</div>
+            <app-accordion-section 
+            [sections]="resumeData.sections" 
+            [multiOpenEnabled]="multiOpenEnabled">
+            </app-accordion-section>
+        </div>
+    </section>
 </section>

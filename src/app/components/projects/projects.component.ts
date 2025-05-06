@@ -5,13 +5,13 @@ import { ProjectCardComponent } from "./project-card/project-card.component";
 import { FilterComponent } from "./filter/filter.component";
 import { Project } from '../../models/Project';
 import { PROJECTS } from '../../models/project-data';
-import { ProjectModalComponent } from './project-modal/project-modal.component';
+
 import { Tag } from '../../models/Tag';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, RouterModule, ProjectCardComponent, FilterComponent, ProjectModalComponent],
+  imports: [CommonModule, RouterModule, ProjectCardComponent, FilterComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })

@@ -1,0 +1,85 @@
+.accordion {
+  width: 100%;
+}
+
+.accordion-item {
+  margin-bottom: 6px;
+  transition: margin 0.3s ease;
+  overflow: hidden;
+
+  &.expanded {
+    margin-bottom: 15px;
+  }
+
+   @media (max-width: 768px) {
+    margin-bottom: 0.4em;
+  }
+}
+
+.accordion-button {
+position: relative;
+cursor: pointer;
+ border: none;
+ text-align: center;
+
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  
+  background: rgba(255, 166, 0, 0.87);
+  font-weight: bold;
+  color: white;
+
+  &:hover {
+    background-color: rgba(255, 166, 0, 0.747);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    background-color: rgba(255, 166, 0, 0.747);
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: rgba(255, 166, 0, 0.747);
+    box-shadow: 0 0 0 3px rgba(255, 166, 0, 0.747);
+  }
+
+  .arrow-icon {
+    position: absolute;
+    right: 12px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+    
+    &.expanded {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.accordion-content {
+  //padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-top: -5px;
+  color: rgba(255, 255, 255, 0.795);
+  overflow: hidden; // Важно за анимацията на височина
+  will-change: height, opacity; // Оптимизация за производителност
+  
+}
+
+.content-item {
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  padding-left: 0;
+  list-style-type: none;
+  white-space: pre-line;
+
+  text-align:left;
+}
+
