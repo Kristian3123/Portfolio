@@ -21,11 +21,18 @@ isModalOpen: boolean = false ;//as const
 //@Input() project!: Project;
 //@Output() viewMore = new EventEmitter<void>();
 //@Output() viewMore = new EventEmitter<Project>();
+@Output() openModal = new EventEmitter<Project>();
 
 constructor(private cdr: ChangeDetectorRef) {}
 
-openModal(event: Event): void {
-  event.preventDefault();
+onOpenModal(event: MouseEvent) {
+  event.stopPropagation();
+  this.openModal.emit(this.project);
+}
+
+/*openModal(event: MouseEvent){
+  event.stopPropagation(); // Prevent event from bubbling up
+  //event.preventDefault();
   this.isModalOpen = true;
   document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
@@ -33,7 +40,7 @@ openModal(event: Event): void {
 closeModal(): void {
   this.isModalOpen = false;
   document.body.style.overflow = ''; // Restore scrolling
-}
+}*/
 
 /*private isClosing = false;
 openModal(event: MouseEvent) {

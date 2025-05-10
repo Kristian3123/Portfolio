@@ -1,4 +1,4 @@
-<div class="modal-overlay" *ngIf="isOpen" (click)="close()">
+<div class="modal-overlay"  (click)="close()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <button class="close-btn" (click)="close()">&times;</button>
     
@@ -7,10 +7,27 @@
     </div>
     
     <div class="modal-body">
-      
 <div class="project-images" *ngIf="project.images?.length">
-        <img *ngFor="let image of project.images" [src]="image" alt="Project screenshot">
+ 
+  <div class="slide">
+<!--<div *ngFor="let image of project.images"></div>-->
+<img  [src]="project.images[currentImageIndex]" alt="Project screenshot" class="slide-image">
+
+  </div>
+        
+
+        <button class="slide-btn prev" (click)="prevImage($event)">❮</button>
+        <button class="slide-btn next" (click)="nextImage($event)">❯</button>
+
+        <div class="dots">
+          <span 
+            *ngFor="let image of project.images; let i = index" 
+            [class.active]="i === currentImageIndex">
+          </span>
+        </div>
+
       </div>
+
       <div class="project-details">
       <p>{{ project.description }}</p>
       

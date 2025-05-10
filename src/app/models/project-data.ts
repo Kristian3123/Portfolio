@@ -11,7 +11,7 @@ export const PROJECTS: Project[] =[
       tags:[Tag.Angular, Tag.TypeScript],
       
       demo: 'https://Kristian3123.github.io/Graduation',
-        images: ['../assets/5296501_linkedin_network_linkedin logo_icon.svg'],
+        images: ['../assets/projects/Portfolio/Portfolio_Home.PNG','../assets/projects/Portfolio/Portfolio_Projects.PNG','../assets/projects/Portfolio/Portfolio_Resume.PNG'],
         
   },
   {

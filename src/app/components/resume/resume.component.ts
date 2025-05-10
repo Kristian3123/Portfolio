@@ -41,24 +41,5 @@ multiOpenEnabled = false;
 toggleMultiOpen() {
   this.multiOpenEnabled = !this.multiOpenEnabled;
 }
-/*workExperience = [
-  'Internship at XYZ Company (2024)',
-  'Freelance Web Development Projects'
-];
-
-education = [
-  'Bachelor of Informatics, NBU (2021 - Present)',
-  'Professional Diploma in System Programming, PGEA (2016 - 2021)'
-];
-
-certifications = [
-  'Certificate in Web Development (2023)',
-  'System Programming Diploma (2021)'
-];
-
-skills = [
-  'C++', 'Java', 'JavaScript', 'HTML/CSS', 'PHP', 'Python', 'Angular', 'Spring Boot', 'Git', 'MySQL'
-];*/
-
 }
 
