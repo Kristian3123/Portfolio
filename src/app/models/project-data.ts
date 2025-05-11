@@ -7,21 +7,24 @@ export const PROJECTS: Project[] =[
       title: 'Portfolio Website',
       summary: 'A',
       description: 'A ',
-      link: 'https://github.com/Kristian3123/Graduation',
-      tags:[Tag.Angular, Tag.TypeScript],
       
-      demo: 'https://Kristian3123.github.io/Graduation',
-        images: ['../assets/projects/Portfolio/Portfolio_Home.PNG','../assets/projects/Portfolio/Portfolio_Projects.PNG','../assets/projects/Portfolio/Portfolio_Resume.PNG'],
+      tags:[Tag.Angular, Tag.TypeScript],
+      images: ['../assets/projects/Portfolio/Portfolio_Home.PNG','../assets/projects/Portfolio/Portfolio_Projects.PNG','../assets/projects/Portfolio/Portfolio_Resume.PNG'],
+      
+      link: 'https://github.com/Kristian3123/Portfolio',
+      demo: 'https://Kristian3123.github.io/Portfolio',
+       
         
   },
   {
     id:1,
   title: 'Transport Compаny',
-  summary: 'A Java Project that track wats hapening in a TransportCompаny',
+  summary: 'A Java Project that track wats hapening in a Transport Compаny',
   description: 'A ',
-  link: 'https://github.com/Kristian3123/Graduation',
-  tags:[Tag.Java],
   
+  tags:[Tag.Java],
+
+  link: 'https://github.com/Kristian3123/Graduation',
   demo: 'https://Kristian3123.github.io/Graduation',
     images: ['../assets/projects/portfolio.png'],
   },
