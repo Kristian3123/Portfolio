@@ -5,12 +5,11 @@ export const PROJECTS: Project[] =[
       {
         id:0,
       title: 'Portfolio Website',
-      summary: 'A',
-      description: 'A ',
+      summary: 'An Angular project showcasing projects, skills, and results — highlighting expertise and impact',
+      description: 'A curated collection of my most impactful projects, showcasing skills, expertise, and achievements across [your field, e.g., design, development, marketing]. Demonstrates problem-solving, creativity, and measurable results. ',
       
       tags:[Tag.Angular, Tag.TypeScript],
-      images: ['../assets/projects/Portfolio/Portfolio_Home.PNG','../assets/projects/Portfolio/Portfolio_Projects.PNG','../assets/projects/Portfolio/Portfolio_Resume.PNG'],
-      
+      images: ['assets/projects/Portfolio/Portfolio_Home.PNG','assets/projects/Portfolio/Portfolio_Projects.PNG','assets/projects/Portfolio/Portfolio_Resume.PNG'],
       link: 'https://github.com/Kristian3123/Portfolio',
       demo: 'https://Kristian3123.github.io/Portfolio',
        
@@ -19,8 +18,8 @@ export const PROJECTS: Project[] =[
   {
     id:1,
   title: 'Transport Compаny',
-  summary: 'A Java Project that track wats hapening in a Transport Compаny',
-  description: 'A ',
+  summary: 'A Java Project that track what’s  hapening in a Transport Compаny - monitoring vehicles, shipments and more',
+  description: 'A Java-based Transport Company Management System for managing vehicles, drivers, routes, and shipments. Features include CRUD operations, route optimization, and shipment tracking.',
   
   tags:[Tag.Java],
 

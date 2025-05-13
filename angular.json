@@ -14,10 +14,13 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/portfolio-website",
+            "baseHref": "/Portfolio/",
+    "deployUrl": "/Portfolio/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "server": "src/main.server.ts",
@@ -25,11 +28,13 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/assets",
+              
+              
               "src/favicon.ico",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets",
+                 "output": "/assets/"
               }
             ],
             "styles": [
@@ -40,6 +45,14 @@
           },
           "configurations": {
             "production": {
+               "baseHref": "/",
+      "deployUrl": "/", 
+
+      
+               "optimization": true,
+    "outputHashing": "all",
+    "sourceMap": false,
+    "extractLicenses": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -51,38 +64,63 @@
                   "maximumWarning": "4kB",
                   "maximumError": "8kB"
                 }
-              ],
-              "outputHashing": "all"
+              ]
+              
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+             
             }
           },
           "defaultConfiguration": "production"
         },
-        "build-browser": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/portfolio-website",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "zone.js",
-            "tsConfig": "tsconfig.app.json",
-            "assets": ["src/assets","src/favicon.ico"],
-            "styles": ["src/styles.scss"]
-          }
-        },
+
+
+     "build-browser": {
+  "builder": "@angular-devkit/build-angular:browser",
+  "options": {
+    "outputPath": "dist/portfolio-website/browser",
+    "index": "src/index.html",
+    "main": "src/main.ts",
+    "polyfills": "zone.js",
+    "tsConfig": "tsconfig.app.json",
+    "assets": [
+      {
+        "glob": "**/*",
+        "input": "src/assets",
+        "output": "/assets/"
+      },
+      "src/favicon.ico"
+    ],
+    "styles": ["src/styles.scss"],
+    "outputHashing": "all"
+  },
+  "configurations": {
+    "production": {
+      "baseHref": "/Portfolio/",
+      "deployUrl": "/Portfolio/",
+      "optimization": true,
+      "outputHashing": "all",
+      "sourceMap": false
+    },
+    "development": {
+      "optimization": false,
+      "sourceMap": true
+    }
+  }
+},
 
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "portfolio-website:build:production"
+              "buildTarget": "portfolio-website:build-browser:production"
             },
             "development": {
-              "buildTarget": "portfolio-website:build:development"
+              "buildTarget": "portfolio-website:build-browser:development"
+             
             }
           },
           "defaultConfiguration": "development"
@@ -94,6 +132,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
+            "baseHref": "/Portfolio/",
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
