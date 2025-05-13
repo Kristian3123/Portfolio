@@ -13,28 +13,26 @@ import { RouterModule } from '@angular/router';
 })
 
 export class ModalComponent {
-//  @Input() project={} as Project;
-//  @Input() project: any;
   @Input() project!: Project;
   @Input() isOpen: boolean = false;
   @Output() closeModal = new EventEmitter<void>();
 
- close() {
-  this.closeModal.emit();
-  this.isOpen = false;
-}
+  close() {
+    this.closeModal.emit();
+    this.isOpen = false;
+  }
 
-currentImageIndex = 0;
+  currentImageIndex = 0;
 
-nextImage(event: MouseEvent) {
-  event.stopPropagation();
-  this.currentImageIndex = (this.currentImageIndex + 1) % this.project.images.length;
-}
+  nextImage(event: MouseEvent) {
+    event.stopPropagation();
+    this.currentImageIndex = (this.currentImageIndex + 1) % this.project.images.length;
+  }
 
 
-prevImage(event: MouseEvent) {
-  event.stopPropagation();
-  this.currentImageIndex = (this.currentImageIndex - 1 + this.project.images.length) % this.project.images.length;
-}
+  prevImage(event: MouseEvent) {
+    event.stopPropagation();
+    this.currentImageIndex = (this.currentImageIndex - 1 + this.project.images.length) % this.project.images.length;
+  }
 
 }

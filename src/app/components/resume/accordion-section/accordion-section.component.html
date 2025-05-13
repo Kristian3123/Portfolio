@@ -1,60 +1,18 @@
-<!--<div class="toggle-switch">
-  <label>
-    <input type="checkbox" >(change)="toggleSection(section.title)"
-    <span class="slider"></span>
-    <span class="label-text">Разреши множествено отваряне</span>
-  </label>
-</div>-->
-
 <div class="accordion">
   <div *ngFor="let section of sections" class="accordion-item">
     <button class="accordion-button" (click)="toggleSection(section.title)">
       {{ section.title }}
-      <span class="arrow-icon">{{ activeSections.includes(section.title) ? '▼' : '▶' }}</span>
+      <span class="arrow-icon">{{
+        activeSections.includes(section.title) ? "▼" : "▶"
+      }}</span>
     </button>
-    
-    <div [@expandCollapse]="isSectionActive(section.title)" class="accordion-content">
+
+    <div
+      [@expandCollapse]="isSectionActive(section.title)"
+      class="accordion-content">
       <div *ngFor="let item of section.content" class="content-item">
         <span [innerHTML]="item"></span>
       </div>
     </div>
   </div>
 </div>
-
-<!--<div class="accordion">
-    <div *ngFor="let section of sections" class="accordion-item">
-      <button class="accordion-button" (click)="toggleSection(section.title)">
-        {{ section.title }}
-      </button>
-      <div *ngIf="activeSection === section.title" class="accordion-content">
-        <ul>
-          <li *ngFor="let item of section.content " class="content-item" >
-            
-            <span [innerHTML]="item"></span>
-            
-        </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-
-<div class="according">
-    <div class="according-header" (click)="onToggle()">
-{{title}}
-<span class="icon">{{open ? '▾' : '▸' }}</span>
-    </div>
-    
-   <div class="according-content" [class.open]="open">
-<ng-container *ngIf="content">
-
-    <ul *ngIf="isArray(content)">
-        <li *ngFor="let item of content">{{ item }}</li>
-      </ul>
-
-       Ако е plain текст 
-      <p *ngIf="!isArray(content)">{{ content }}</p>
-</ng-container>
-   </div>
-    
-</div>-->

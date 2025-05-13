@@ -1,55 +1,59 @@
 <section class="background-contact">
-  
-<section class="contact">
-  <div class="content">
-    <h2>Contact Me</h2>
-    <section class="social">
-      <div class="icons">
-<span>
-  <a href="https://www.linkedin.com/in/kristian-marchev-02689a33b/" ><img src="assets/5296501_linkedin_network_linkedin logo_icon.svg" alt="Linkedin icon"></a>
-</span>
-<span>
-  <a href="https://github.com/Kristian3123" ><img src="assets/107139_gray_circle_github_icon.svg" alt="Github icon"></a>
-</span>
-      </div>
-    </section>
+
+  <section class="contact">
+    <div class="content">
+      <h2>Contact Me</h2>
+      <section class="social">
+        <div class="icons">
+          <span>
+            <a href="https://www.linkedin.com/in/kristian-marchev-02689a33b/"><img
+                src="assets/5296501_linkedin_network_linkedin logo_icon.svg" alt="Linkedin icon"></a>
+          </span>
+          <span>
+            <a href="https://github.com/Kristian3123"><img src="assets/107139_gray_circle_github_icon.svg"
+                alt="Github icon"></a>
+          </span>
+        </div>
+      </section>
     </div>
-    
+
     <div style="margin-bottom: 10px;">Or you can send a message </div>
     <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
 
       <div class="input-group">
-        
-        <input class="text-input" id="name" type="text" formControlName="name" placeholder="Name" ><!--  /-->
+
+        <input class="text-input" id="name" type="text" formControlName="name" placeholder="Name"><!--  /-->
         <label for="name" class="placeholder">Name</label>
-      <!-- <span class="input-label" >Name</span>-->
 
         <small *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">Name is required</small>
       </div>
-  
+
       <div class="input-group">
-        
+
         <input class="text-input" id="email" type="email" formControlName="email" placeholder="Email" />
         <label for="email" class="placeholder">E-male</label>
-        <small *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">Enter a valid email</small>
+        <small *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">Enter a valid
+          email</small>
       </div>
-  
+
       <div class="input-group">
-        
-        <textarea class="text-input" id="message" type="message" rows="4" formControlName="message" placeholder="Your Message"></textarea>
+
+        <textarea class="text-input" id="message" type="message" rows="4" formControlName="message"
+          placeholder="Your Message"></textarea>
         <label for="message" class="placeholder">Your Message</label>
-        <small *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">Message must be at least 10 characters</small>
+        <small *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">Message must be at
+          least 10 characters</small>
       </div>
-     
+
       <button type="submit" [disabled]="isSubmitting || contactForm.invalid">
         <span *ngIf="!isSubmitting">Send</span>
         <span *ngIf="isSubmitting">Sending...</span>
       </button>
-  
+
       <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
-    
-      <div  style="margin-bottom: 10px; margin-top: 10px;">Or you can send e-mail to the following email address: </div>
-      <div  style="margin-bottom: 10px; ">kris.dev.worke&#64;gmail.com </div>
+
+      <div style="margin-bottom: 10px; margin-top: 10px;">Or you can send e-mail to the following email address: </div>
+      <div style="margin-bottom: 10px; ">kris.dev.worke&#64;gmail.com </div>
     </form>
   </section>
-  </section>
+</section>

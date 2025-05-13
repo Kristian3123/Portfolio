@@ -1,81 +1,48 @@
-<div class="modal-overlay"  (click)="close()">
+<div class="modal-overlay" (click)="close()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <button class="close-btn" (click)="close()">&times;</button>
-    
+
     <div class="modal-header">
       <h2>{{ project.title }}</h2>
     </div>
-    
-    <div class="modal-body">
-<div class="project-images" *ngIf="project.images?.length">
- 
-  <div class="slide">
-<!--<div *ngFor="let image of project.images"></div>-->
-<img  [src]="project.images[currentImageIndex]" alt="Project screenshot" class="slide-image">
 
-  </div>
-        
+    <div class="modal-body">
+      <div class="project-images" *ngIf="project.images?.length">
+
+        <div class="slide">
+
+          <img [src]="project.images[currentImageIndex]" alt="Project screenshot" class="slide-image">
+
+        </div>
+
 
         <button class="slide-btn prev" (click)="prevImage($event)">❮</button>
         <button class="slide-btn next" (click)="nextImage($event)">❯</button>
 
         <div class="dots">
-          <span 
-            *ngFor="let image of project.images; let i = index" 
-            [class.active]="i === currentImageIndex">
+          <span *ngFor="let image of project.images; let i = index" [class.active]="i === currentImageIndex">
           </span>
         </div>
 
       </div>
 
       <div class="project-details">
-      <p>{{ project.description }}</p>
-      
+        <p>{{ project.description }}</p>
 
-      <div class="tags">
-        <span *ngFor="let tag of project.tags" class="tag"
-         [style.background-color]="tag.color">{{ tag }}</span>
+
+        <div class="tags">
+          <span *ngFor="let tag of project.tags" class="tag" [style.background-color]="tag.color">{{ tag }}</span>
+        </div>
       </div>
-</div>
     </div>
 
-    
+
     <div class="modal-footer">
       <div class="project-links">
-      <a [href]="project.link" target="_blank" class="btn">GitHub</a>
-      <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="btn">Demo</a>
-    </div>
+        <a [href]="project.link" target="_blank" class="btn">GitHub</a>
+        <a *ngIf="project.demo" [href]="project.demo" target="_blank" class="btn">Demo</a>
+      </div>
     </div>
 
   </div>
 </div>
-
-
-<!--<div class="modal-overlay" *ngIf="show" (click)="closeModal()">
-    <div class="modal-content" (click)="stopPropagation($event)">
-      <button class="close-button" (click)="closeModal()">&times;</button>
-      
-      <h2>{{ project.title }}</h2>
-      
-      <div class="modal-body">
-
-        <div class="project-images">
-          <img *ngFor="let image of project.images" [src]="image" alt="{{ project.title }}">
-        </div>
-        
-        <div class="project-details">
-          <p><strong>Summary:</strong> {{ project.summary }}</p>
-          <p><strong>Description:</strong> {{ project.description }}</p>
-          
-          <div class="tags">
-            <span *ngFor="let tag of project.tags" class="tag">{{ tag }}</span>
-          </div>
-          
-          <div class="project-links">
-            <a [href]="project.link" target="_blank" class="link-button">View Code</a>
-            <a [href]="project.demo" target="_blank" class="link-button">Live Demo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>-->

@@ -15,22 +15,20 @@
             <div class="controls">
 
                 <button (click)="DownloadFile()" class="btn">Download PDF CV/Resume</button>
-                <!--<div class="content"></div>-->
+
                 <div class="toggle-group">
-                <div class="toggle-container">
-                    <div class="toggle-switch">
-                        <label>
-                            <input type="checkbox" [checked]="multiOpenEnabled" (change)="toggleMultiOpen()">
-                            <span class="slider"></span>
-                            <span class="label-text">Multiple panels</span>
-                        </label>
+                    <div class="toggle-container">
+                        <div class="toggle-switch">
+                            <label>
+                                <input type="checkbox" [checked]="multiOpenEnabled" (change)="toggleMultiOpen()">
+                                <span class="slider"></span>
+                                <span class="label-text">Multiple panels</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
-</div>
-            <app-accordion-section 
-            [sections]="resumeData.sections" 
-            [multiOpenEnabled]="multiOpenEnabled">
+            <app-accordion-section [sections]="resumeData.sections" [multiOpenEnabled]="multiOpenEnabled">
             </app-accordion-section>
         </div>
     </section>

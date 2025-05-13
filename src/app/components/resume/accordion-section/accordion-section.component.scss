@@ -11,21 +11,21 @@
     margin-bottom: 15px;
   }
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     margin-bottom: 0.4em;
   }
 }
 
 .accordion-button {
-position: relative;
-cursor: pointer;
- border: none;
- text-align: center;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  text-align: center;
 
   width: 100%;
   padding: 10px;
   border-radius: 4px;
-  
+
   background: rgba(255, 166, 0, 0.87);
   font-weight: bold;
   color: white;
@@ -53,7 +53,7 @@ cursor: pointer;
     right: 12px;
     font-size: 12px;
     transition: transform 0.3s ease;
-    
+
     &.expanded {
       transform: rotate(90deg);
     }
@@ -67,9 +67,8 @@ cursor: pointer;
   border-radius: 4px;
   margin-top: -5px;
   color: rgba(255, 255, 255, 0.795);
-  overflow: hidden; // Важно за анимацията на височина
-  will-change: height, opacity; // Оптимизация за производителност
-  
+  overflow: hidden;
+  will-change: height, opacity;
 }
 
 .content-item {
@@ -80,6 +79,5 @@ cursor: pointer;
   list-style-type: none;
   white-space: pre-line;
 
-  text-align:left;
+  text-align: left;
 }
-

@@ -1,25 +1,21 @@
 <div class="filter-container">
-    <button class="filter-button" (click)="toggleDropdown()">
-      Filter
-      <span class="arrow">{{ isOpen ? '▲' : '▼' }}</span>
-    </button>
+  <button class="filter-button" (click)="toggleDropdown()">
+    Filter
+    <span class="arrow">{{ isOpen ? '▲' : '▼' }}</span>
+  </button>
 
-  <button *ngIf="isOpen && hasSelectedFilters()"
-   class="reset-button" (click)="rests()">Reset</button>
+  <button *ngIf="isOpen && hasSelectedFilters()" class="reset-button" (click)="rests()">Reset</button>
 
-    <div class="dropdown" *ngIf="isOpen">
-      <div class="filter-group" *ngFor="let group of filterGroups">
-        <h3 class="group-title">{{ group.title }}:</h3>
-        <div class="filter-options">
-          <label *ngFor="let option of group.options" class="option">
-            <input 
-              type="checkbox" 
-              [(ngModel)]="option.selected"
-              (change)="updateFilters()">
-            {{ option.tag.toString() }}
-          </label>
-        </div>
+  <div class="dropdown" *ngIf="isOpen">
+    <div class="filter-group" *ngFor="let group of filterGroups">
+      <h3 class="group-title">{{ group.title }}:</h3>
+      <div class="filter-options">
+        <label *ngFor="let option of group.options" class="option">
+          <input type="checkbox" [(ngModel)]="option.selected" (change)="updateFilters()">
+          {{ option.tag.toString() }}
+        </label>
       </div>
     </div>
-
   </div>
+
+</div>

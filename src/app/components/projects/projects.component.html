@@ -1,32 +1,27 @@
 <section class="background-projects">
-<section class="projects">
+  <section class="projects">
 
-  <div class="container">
-<div  class="filter">
-    <app-filter (filtersChanged)="onFiltersChanged($event)"></app-filter>
-</div>
-
-   <div class="My-Projects"> 
-   <h2>My Projects</h2>
-</div>
-</div>
-
-  
-  <div class="projects-container">  
-      <div *ngFor="let project of filteredProjects" class="project-card" style="max-width: 320px; min-width: 320px;"><!--380px-->
-
-<app-project-card 
-[project]="project" 
-(openModal)="openModal($event)"></app-project-card>
+    <div class="container">
+      <div class="filter">
+        <app-filter (filtersChanged)="onFiltersChanged($event)"></app-filter>
       </div>
-    
-    
-  </div>
-</section>
+
+      <div class="My-Projects">
+        <h2>My Projects</h2>
+      </div>
+    </div>
+
+
+    <div class="projects-container">
+      <div *ngFor="let project of filteredProjects" class="project-card" style="max-width: 320px; min-width: 320px;">
+
+        <app-project-card [project]="project" (openModal)="openModal($event)"></app-project-card>
+      </div>
+
+
+    </div>
+  </section>
 </section>
 
-<app-modal 
-  *ngIf="selectedProject" 
-  [project]="selectedProject" 
-  (closeModal)="closeModal()">
+<app-modal *ngIf="selectedProject" [project]="selectedProject" (closeModal)="closeModal()">
 </app-modal>

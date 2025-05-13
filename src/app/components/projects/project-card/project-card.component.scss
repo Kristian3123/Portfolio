@@ -14,59 +14,59 @@
 
 }*/
 
-.card{
+.card {
   position: relative;
-  
+
 }
 
 .card-body {
-  flex: 1; // Заема останалото пространство
-  min-height: 150px; // Фиксира минимална височина
+  flex: 1;
+  min-height: 150px;
   padding: 15px;
   text-align: center;
-  
-  .card-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
 
-.card-text {
-  font-size: 15px;
-  color: #666;
-  margin-bottom: 15px;
-}
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 15px;
+  }
 }
 
 
 .btn {
   padding: 10px 12px;
-  background-color: rgba(255, 166, 0, 0.76);//#007bff
+  background-color: rgba(255, 166, 0, 0.76);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
-  
+
   position: relative;
-  
-  &:hover{
-   background-color: rgba(255, 140, 0, 0.842); //#0056b3
+
+  &:hover {
+    background-color: rgba(255, 140, 0, 0.842);
   }
 
 }
 
 .card-footer {
-  
-  flex-shrink: 0; // Забранява свиването
+
+  flex-shrink: 0;
   margin-top: 5px;
   padding: 10px;
   background-color: #f8f9fa13;
-  
+
   .d-flex {
-      gap: 10px; /* Разстояние между таговете */
+    gap: 10px;
   }
 
-  
+
   .tag {
     gap: 10px;
     padding: 5px 10px;
@@ -75,25 +75,25 @@
     //line-height: 30px;
     //height: 30px;
     width: fit-content;
-    
-    margin-right: 8px; /* Разстояние отдясно */
-    margin-bottom: 8px; /* Разстояние отдолу ако се пренареждат */
+
+    margin-right: 8px;
+    margin-bottom: 8px;
     text-align: center;
     display: inline-block;
-  
-    white-space: nowrap; /* Предотвратява пренасяне на текста */
 
- //   background-color: blue;
+    white-space: nowrap;
+
+    //   background-color: blue;
     color: white;
-    
+
     &:last-child {
-      margin-right: 0; /* Премахваме margin от последния елемент */
+      margin-right: 0;
     }
   }
-  
+
 }
 
- /* .content {
+/* .content {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -118,20 +118,21 @@
       
     }
   }*/
-  
-  @media (max-width: 768px) {
-    .project-card {
-      max-width: 100%; /* Картите да заемат цялата ширина */
-  }
-    .card-footer .d-flex {
-        justify-content: flex-start; /* Подравняване наляво на малки екрани */
-    }
 
-    .card-body .view-more-btn {
-      font-size: 0.9rem; /* Намаляване на размера на бутона */
+@media (max-width: 768px) {
+  .project-card {
+    max-width: 100%;
   }
 
-    .tag {
-        font-size: 0.8rem; /* Намаляване на шрифта */
-    }
+  .card-footer .d-flex {
+    justify-content: flex-start;
+  }
+
+  .card-body .view-more-btn {
+    font-size: 0.9rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+  }
 }

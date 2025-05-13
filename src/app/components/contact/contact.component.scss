@@ -35,13 +35,14 @@
     flex-direction: column;
     position: relative;
   }
+
   label {
     position: absolute;
     pointer-events: none;
     transition: 0.5s ease;
-    top: 50%; 
+    top: 50%;
     left: 12px;
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
     color: #666;
     font-size: 14px;
   }
@@ -61,17 +62,18 @@
       border-color: orange;
     }
   }
-  input:focus ~ label,
-  input:not(:placeholder-shown) ~ label,
-  textarea:focus ~ label,
-  textarea:not(:placeholder-shown) ~ label {
-    top: 0px; /* Преместване нагоре */
+
+  input:focus~label,
+  input:not(:placeholder-shown)~label,
+  textarea:focus~label,
+  textarea:not(:placeholder-shown)~label {
+    top: 0px;
     font-size: 12px;
     color: white;
   }
 
   input::placeholder {
-    color: transparent; /* Скриване на текста "placeholder" */
+    color: transparent;
   }
 
   /* .input-group input:focus~label, 
@@ -92,7 +94,7 @@
     pointer-events: none;
   }
 
-  .text-input:focus + .placeholder {
+  .text-input:focus+.placeholder {
     top: 0px;
     color: white;
     background: linear-gradient(to bottom, #222, #333);
@@ -113,7 +115,7 @@
       transform: scale(0.6) translateY(-20px);
     }*/
 
-  .text-input:placeholder-shown:not(.text-input:focus) ~ .input-label {
+  .text-input:placeholder-shown:not(.text-input:focus)~.input-label {
     transform: unset;
   }
 
@@ -172,18 +174,15 @@
 
         img {
           width: 50px;
-          
         }
 
         img:hover {
-          filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg)
-            brightness(104%) contrast(97%);
+          filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
         }
       }
     }
   }
 }
-
 
 @media (max-width: 768px) {
   .contact {
@@ -196,6 +195,7 @@
     }
 
     .input-group {
+
       input,
       textarea {
         font-size: 14px;

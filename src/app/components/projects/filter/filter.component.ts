@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, Output  } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Tag } from "../../../models/Tag";
+import { Tag } from '../../../models/Tag';
 
 interface FilterGroup {
   title: string;
@@ -18,9 +18,8 @@ interface FilterOption {
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './filter.component.html',
-  styleUrl: './filter.component.scss'
+  styleUrl: './filter.component.scss',
 })
-
 export class FilterComponent {
   @Input() title: string = 'Filter';
   @Input() items: any[] = [];
@@ -38,8 +37,8 @@ export class FilterComponent {
         { tag: Tag.JavaScript, selected: false },
         { tag: Tag.Python, selected: false },
         { tag: Tag.Csharp, selected: false },
-        { tag: Tag.Java, selected: false }
-      ]
+        { tag: Tag.Java, selected: false },
+      ],
     },
     {
       title: 'Frameworks',
@@ -47,10 +46,9 @@ export class FilterComponent {
         { tag: Tag.Angular, selected: false },
         { tag: Tag.React, selected: false },
         { tag: Tag.Nodejs, selected: false },
-        { tag: Tag.AspNet, selected: false }
-      ]
+        { tag: Tag.AspNet, selected: false },
+      ],
     },
-
   ];
 
   @Output() filtersChanged = new EventEmitter<Tag[]>();
@@ -60,31 +58,29 @@ export class FilterComponent {
   }
 
   hasSelectedFilters(): boolean {
-    return this.filterGroups.some(group => 
-      group.options.some(option => option.selected)
+    return this.filterGroups.some((group) =>
+      group.options.some((option) => option.selected)
     );
   }
 
   rests(): void {
-  // Нулиране на всички чекбоксове
-  this.filterGroups.forEach(group => {
-    group.options.forEach(option => option.selected = false);
-  });
-  // Излъчване на празен масив, за да покаже всички проекти
-  this.filtersChanged.emit([]);
-  
-  // Затваряне на dropdown (по избор)
-  // this.isOpen = false;
-}
+    // Нулиране на всички чекбоксове
+    this.filterGroups.forEach((group) => {
+      group.options.forEach((option) => (option.selected = false));
+    });
+    // Излъчване на празен масив, за да покаже всички проекти
+    this.filtersChanged.emit([]);
+
+    // Затваряне на dropdown (по избор)
+    // this.isOpen = false;
+  }
 
   updateFilters() {
     const selectedTags = this.filterGroups
-      .flatMap(group => group.options)
-      .filter(option => option.selected)
-      .map(option => option.tag);
-    
+      .flatMap((group) => group.options)
+      .filter((option) => option.selected)
+      .map((option) => option.tag);
+
     this.filtersChanged.emit(selectedTags);
   }
-
-
 }

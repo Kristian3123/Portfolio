@@ -1,90 +1,89 @@
 .filter-container {
-    position: relative;
-    display: inline-block;
-    font-family: Arial, sans-serif;
-  
-    .filter-button {
-      padding: 5px 9px;
-      background-color: rgba(255, 140, 0, 0.842);
-      border: 1px solid rgba(255, 140, 0, 0.842);
-      border-radius: 10px;
-      cursor: pointer;
-     // display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-  
-      &:hover {
-        background-color: rgba(255, 140, 0, 0.603);
-      }
-  
-      .arrow {
-        font-size: 9px;
-      }
+  position: relative;
+  display: inline-block;
+  font-family: Arial, sans-serif;
+
+  .filter-button {
+    padding: 5px 9px;
+    background-color: rgba(255, 140, 0, 0.842);
+    border: 1px solid rgba(255, 140, 0, 0.842);
+    border-radius: 10px;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+
+    &:hover {
+      background-color: rgba(255, 140, 0, 0.603);
     }
 
-    .reset-button {
-        
-        padding: 5px 9px;
-        background-color: rgba(255, 140, 0, 0.842);
-        border: 1px solid rgba(255, 140, 0, 0.842);
-        border-radius: 10px;
-        color: black;
-        cursor: pointer;
-        font-size: 14px;
-        white-space: nowrap;
-        margin-left: 3px;
-        
-        &:hover {
-          background-color:  rgba(255, 140, 0, 0.603);
-        }
-        
-        &:active {
-          background-color: rgba(255, 140, 0, 0.842);
-        }
-      }
-  
-    .dropdown {
+    .arrow {
+      font-size: 9px;
+    }
+  }
+
+  .reset-button {
+    padding: 5px 9px;
+    background-color: rgba(255, 140, 0, 0.842);
+    border: 1px solid rgba(255, 140, 0, 0.842);
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    margin-left: 3px;
+
+    &:hover {
+      background-color: rgba(255, 140, 0, 0.603);
+    }
+
+    &:active {
+      background-color: rgba(255, 140, 0, 0.842);
+    }
+  }
+
+  .dropdown {
     display: flex;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      margin-top: 3px;
-      
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 9px;
-      min-width: 200px;
-      z-index: 100;
-      color: black;
-  
-      .group-title { display: flex;
-        margin: 0 0 8px 0;
-        font-size: 14px;
-        font-weight: bold;
-        color: #333;
-      }
-  
-      .filter-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 3px;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 9px;
+    min-width: 200px;
+    z-index: 100;
+    color: black;
+
+    .group-title {
+      display: flex;
+      margin: 0 0 8px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .filter-options {
+      display: flex;
+      flex-direction: column;
+      margin-left: 6px;
+      gap: 6px;
+      margin-bottom: 12px;
+
+      .option {
         display: flex;
-        flex-direction: column;
-        margin-left: 6px;
-        gap: 6px;
-        margin-bottom: 12px;
-  
-        .option {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 13px;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        cursor: pointer;
+
+        input[type="checkbox"] {
           cursor: pointer;
-  
-          input[type="checkbox"] {
-            cursor: pointer;
-          }
         }
       }
     }
   }
+}

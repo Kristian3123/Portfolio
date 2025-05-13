@@ -12,7 +12,7 @@ import emailjs from '@emailjs/browser';
   styleUrl: './contact.component.scss'
 })
 
-export class ContactComponent  {
+export class ContactComponent {
   contactForm: FormGroup;
   isSubmitting = false;
   successMessage = '';
@@ -38,7 +38,7 @@ export class ContactComponent  {
       email: this.contactForm.value.email,
       message: this.contactForm.value.message,
     };
-    
+
     emailjs.send('default_service', 'template_portfolio', formData, 'nTjpfQxMI0EZkVIS1')
       .then(() => {
         this.isSubmitting = false;
@@ -58,5 +58,5 @@ export class ContactComponent  {
     }, 2000);
   }
 
-  
+
 }
