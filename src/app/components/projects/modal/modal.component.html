@@ -11,7 +11,7 @@
 
         <div class="slide">
 
-          <img [src]="project.images[currentImageIndex]" alt="Project screenshot" class="slide-image">
+          <img [src]="project.images[currentImageIndex]" alt="Project screenshot" class="slide-image" [@slideAnimation]="currentImageIndex">
 
         </div>
 

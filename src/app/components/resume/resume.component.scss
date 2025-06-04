@@ -8,7 +8,7 @@ flex-direction: row;
   box-sizing: border-box;
   //background-color: #222;
   color: #fff;
-
+margin-top: 50px;
   padding: 4rem 2rem;
 
   .resume {
@@ -77,10 +77,10 @@ flex-direction: row;
           height: 200px;
         }
 
-        animation-name: floating;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
+       // animation-name: floating;
+        //animation-duration: 3s;
+       // animation-iteration-count: infinite;
+       // animation-timing-function: ease-in-out;
       }
 
       @keyframes floating {

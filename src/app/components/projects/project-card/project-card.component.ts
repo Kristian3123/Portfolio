@@ -7,7 +7,7 @@ import { ModalComponent } from '../modal/modal.component';
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [CommonModule, ModalComponent],
+  imports: [CommonModule],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss'
 })

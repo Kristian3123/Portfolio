@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, HostListener, OnChanges } from 
 import { CommonModule } from '@angular/common';
 import { Project } from '../../../models/Project';
 import { RouterModule } from '@angular/router';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-modal',
@@ -9,6 +10,19 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule,],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.scss',
+
+ animations: [
+    trigger('slideAnimation', [
+      transition(':increment', [
+        style({ opacity: 0 }),
+        animate('500ms ease-in-out', style({ opacity: 1 }))
+      ]),
+      transition(':decrement', [
+        style({ opacity: 0 }),
+        animate('500ms ease-in-out', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 
 })
 

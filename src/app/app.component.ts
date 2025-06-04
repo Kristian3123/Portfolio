@@ -1,24 +1,29 @@
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 import { Component } from '@angular/core';
-import { RouterOutlet, Router, NavigationEnd, ActivatedRoute} from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd, ActivatedRoute, ChildrenOutletContexts} from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactComponent } from './components/contact/contact.component';
-
 import { ModalComponent  } from './components/projects/modal/modal.component';
+
+import { trigger, transition,style,animate,query,group,sequence,state} from '@angular/animations';
+
+
+
+
 
 
 @Component({
   selector: 'app-root',
   //template: '<router-outlet></router-outlet>',
-  imports: [CommonModule, RouterOutlet, 
-HeaderComponent, HomeComponent, ProjectsComponent, ContactComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent],
   templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 
-  styleUrl: './app.component.scss'
+
 })
 
 export class AppComponent {
@@ -27,7 +32,8 @@ export class AppComponent {
   constructor(
     private titleService: Title,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private contexts: ChildrenOutletContexts
   ) {
     this.setPageTitleFromRoutes();
   }
@@ -48,5 +54,10 @@ export class AppComponent {
           this.titleService.setTitle(data['title']);
         }
       });
+  }
+
+
+  getRouteAnimationData(outlet: RouterOutlet) {
+    return outlet?.activatedRouteData?.['animation'];
   }
 }
