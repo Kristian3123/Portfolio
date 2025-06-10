@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { ModalComponent } from './modal/modal.component';
 import { FilterComponent } from './filter/filter.component';
-import { Project } from '../../models/Project';
-import { PROJECTS } from '../../models/project-data';
+import { Project } from '../../models/Projects/ProjectData';
+import { PROJECTS_FULLSTACK } from '../../models/Projects/Projects-fullstack';
 
-import { Tag } from '../../models/Tag';
+import { Tag } from '../../models/Projects/Tags';
+import { PROJECTS_BACKEND } from '../../models/Projects/Projects-backend';
 
 @Component({
   selector: 'app-projects',
@@ -23,7 +24,7 @@ import { Tag } from '../../models/Tag';
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
-  projects: Project[] = PROJECTS;
+  projects: Project[] = [...PROJECTS_FULLSTACK, ...PROJECTS_BACKEND];
   selectedProject: Project | null = null; // Track which project is selected for the modal
 
   filteredProjects: Project[] = this.projects;

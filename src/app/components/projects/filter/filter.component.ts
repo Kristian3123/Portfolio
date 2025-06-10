@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Tag } from '../../../models/Tag';
+import { Tag } from '../../../models/Projects/Tags';
 
 interface FilterGroup {
   title: string;

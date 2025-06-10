@@ -1,4 +1,4 @@
-import { Tag } from "./Tag";
+import { Tag } from "./Tags";
 
 export interface Project {
     id:number;
@@ -15,3 +15,5 @@ export interface Project {
     //languages: string[];
     //frameworks: string[];
   }
+
+  

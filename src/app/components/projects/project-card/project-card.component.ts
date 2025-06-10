@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectorRef, HostListener, Output, EventEmitter, Renderer2, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Project } from '../../../models/Project';
+import { Project } from '../../../models/Projects/ProjectData';
 import { ModalComponent } from '../modal/modal.component';
 
 

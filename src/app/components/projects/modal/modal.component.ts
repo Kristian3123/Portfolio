@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, HostListener, OnChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Project } from '../../../models/Project';
+import { Project } from '../../../models/Projects/ProjectData';
 import { RouterModule } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
 
