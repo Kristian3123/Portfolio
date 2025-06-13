@@ -1,5 +1,5 @@
 # Links
-[Live Demo]([https://github.com/Kristian3123/Portfolio](https://kristian3123.github.io/Portfolio/#/))
+[Live Demo](https://kristian3123.github.io/Portfolio/#/)
 [Source Code](https://github.com/Kristian3123/Portfolio)
 
 # PortfolioWebsite
